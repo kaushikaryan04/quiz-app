@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Quiz Results</title>
+    </head>
+    <body>
+        <h2>Results</h2>
+        <p>Total Questions Answered: {{ total }}</p>
+        <p>Correct Answers: {{ correct }}</p>
+        <p>Incorrect Answers: {{ incorrect }}</p>
+
+        <h3>Details</h3>
+        <ul>
+            {% for session in sessions %}
+            <li>
+                <strong>{{ session.question.question_text }}</strong> - Your
+                Answer: {{ session.selected_option.option_text }}
+                {% if session.is_correct %}
+                            (Correct)
+                        {% else %}
+                            (Incorrect)
+                        {% endif %}
+                    </li>
+            </li>
+            {% endfor %}
+        </ul>
+    </body>
+</html>
