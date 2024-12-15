@@ -127,3 +127,5 @@ LOGIN_REDIRECT_URL = '/'
 
 
 LOGIN_URL = '/login/'
+
+ALLOWED_HOSTS = ['quiz-app-y0rq.onrender.com']
